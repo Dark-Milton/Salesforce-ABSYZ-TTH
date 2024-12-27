@@ -1,0 +1,15 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Search Contact" icon-name="standard:contact">
+        <div class="slds-m-horizontal_medium">
+            <div class="slds-form-element slds-form-element_stacked">
+                <lightning-input type="text" id="stacked-input-id-01" label="Search Contact" name="name" value={name} onchange={handleChange} ></lightning-input>
+            </div>
+            <lightning-datatable
+                lwc:if={contactsList.data}
+                key-field="id"
+                data={contactsList.data}
+                columns={columnsList}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

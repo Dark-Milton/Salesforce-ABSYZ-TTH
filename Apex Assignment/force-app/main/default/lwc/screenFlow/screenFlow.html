@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="LWC Component">
+        <lightning-flow
+            flow-api-name='Sample_Screen'
+            flow-input-variables={inputVariables}
+            onstatuschange={handleStatusChange}
+        >
+        </lightning-flow>
+        <template if:true={outputVariables} for:each={outputVariables} for:item="output" for:index="index">
+           <li key={output.name}>
+                <p>Value returned from Flow:- {output.value}</p>
+           </li>
+        </template>
+        <template if:true={outputVariableValue}>
+           <li key={outputVariableValue}>
+                <p>Value returned from Flow:- {outputVariableValue}</p>
+           </li>
+        </template>
+    </lightning-card>
+</template>

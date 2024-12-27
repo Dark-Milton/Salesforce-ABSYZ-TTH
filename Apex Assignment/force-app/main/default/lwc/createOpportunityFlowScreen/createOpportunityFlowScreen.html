@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Opportunity Creation">
+        <lightning-record-form
+        object-api-name="Opportunity"   
+        fields={fields}
+        onsubmit={handleSubmit}
+        onsuccess={handleSuccess}
+        onerror={handleError}
+        >
+        </lightning-record-form>
+    </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Component LMS Channel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>This is a component Lightning Message Channel.</description>
+    <lightningMessageFields>
+        <fieldName>comp1Data</fieldName>
+        <description>This is the data in component 1</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>comp1DataTask17</fieldName>
+        <description>This is the data in component 1 of Task 17</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

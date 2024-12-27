@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Hello Greeting">
+        Hii
+        Hello {greeting}, {emoji}!
+        <lightning-combobox
+            name="color"
+            label="Color"
+            value={value}
+            placeholder="Select Color"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+        <p>Selected value is: {colorName}</p>
+        <lightning-progress-bar value="50" size="small"></lightning-progress-bar>
+    </lightning-card>
+</template>

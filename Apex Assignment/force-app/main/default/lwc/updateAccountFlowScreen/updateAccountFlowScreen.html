@@ -1,0 +1,20 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Account Record Details">
+        <lightning-record-edit-form
+            object-api-name="Account"
+            record-id={recordId}
+            onsuccess={handleSuccess}
+            onerror={handleError}
+        >
+        <lightning-input-field field-name="Name"> </lightning-input-field>
+            <lightning-input-field field-name="Type"> </lightning-input-field>
+            <lightning-input-field field-name="Industry"> </lightning-input-field>
+            <div class="slds-var-m-top_medium slds-align_absolute-center">
+                <lightning-button variant="brand" type="button" label="Cancel" class="slds-m-right_x-small" >
+                </lightning-button>
+                <lightning-button variant="brand" type="submit" label="Save">
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

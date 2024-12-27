@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <lightning-datatable
+            lwc:if={relatedContacts}
+            key-field="id"
+            data={relatedContacts}
+            show-row-number-column
+            hide-checkbox-column
+            columns={columns}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

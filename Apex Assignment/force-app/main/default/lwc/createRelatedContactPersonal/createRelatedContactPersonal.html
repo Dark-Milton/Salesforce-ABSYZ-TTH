@@ -1,0 +1,40 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Create Contact Record" icon-name="standard:contact">
+        <div class="slds-form slds-m-horizontal_large" role="list">
+            <form onsubmit={handleSubmit}>
+                <div class="slds-form__row">
+                    <div class="slds-form__item" role="listitem">
+                        <lightning-input type="text" id="single-form-element-first-name" placeholder="Enter First Name" value={contactObj.firstName} label="firstName" onchange={handleChange} field-name="FirstName"></lightning-input>
+                    </div>
+                    <div class="slds-form__item" role="listitem">
+                        <lightning-input type="email" id="single-form-element-email" placeholder="Enter Email" value={contactObj.email} required label="Email" onchange={handleChange} field-name="email"> </lightning-input>
+                    </div>
+                </div>
+                <div class="slds-form__row">
+                    <div class="slds-form__item" role="listitem">
+                            <lightning-input type="text" id="single-form-element-last-name" placeholder="Enter Last Name" value={contactObj.lastName} required label="Last Name" onchange={handleChange} field-name="lastName"></lightning-input>
+                    </div>
+                    <div class="slds-form__item" role="listitem">
+                        <lightning-input type="tel" id="single-form-element-phone" placeholder="Enter Phone" value={contactObj.phone} minlength="10" required message-when-too-short="Your email address must be more 10 characters." label="Phone" onchange={handleChange} field-name="phone"></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-form__row">
+                    <div class="slds-form__item" role="listitem">
+                        <lightning-input type="date" id="single-form-element-birthdate" placeholder="Enter birthdate" value={contactObj.birthdate} label="Birthdate" onchange={handleChange} field-name="birthdate"> </lightning-input>
+                    </div>
+                    <div class="slds-form__item" role="listitem">
+                    </div>
+                </div>
+                <div class="slds-align_absolute-center slds-m-top_large">
+                    <lightning-button
+                        type="submit"
+                        name="submit"
+                        variant="brand-outline"
+                        label="Create"
+                    >
+                    </lightning-button>
+                </div>
+            </form>
+        </div>
+    </lightning-card>
+</template>

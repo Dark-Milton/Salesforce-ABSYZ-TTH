@@ -1,0 +1,32 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Lightning Path" icon-name="standard:opportunity">
+        <p>
+            A progress indicator displays the steps in a process. All steps preceding the step specified by currentStep are marked completed.
+        </p>
+        <div class="slds-m-around_medium">
+            <lightning-progress-indicator current-step={current} type="path" has-error="true" variant="base">
+                <lightning-progress-step label="Step 1" value="0"></lightning-progress-step>
+                <lightning-progress-step label="Step 2" value="1"></lightning-progress-step>
+                <lightning-progress-step label="Step 3" value="2"></lightning-progress-step>
+                <lightning-progress-step label="Step 4" value="3"></lightning-progress-step>
+                <lightning-button variant="brand" label="Next Step" title="Next Step" onclick={nextStep}></lightning-button>
+            </lightning-progress-indicator>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-4">
+                    <template lwc:if={showcomp1}>
+                        <c-comp1-opp-stage-change oninputchange={handleInputChange}></c-comp1-opp-stage-change>
+                    </template>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <template lwc:if={showcomp2}>
+                        <c-comp2-opp-stage-change message={message}></c-comp2-opp-stage-change>
+                    </template>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                </div>
+              </div>
+        </div>
+    </lightning-card>
+</template>

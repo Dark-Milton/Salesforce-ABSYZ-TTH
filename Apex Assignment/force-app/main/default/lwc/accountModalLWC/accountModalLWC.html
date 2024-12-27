@@ -1,0 +1,13 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Account Modal" icon-name="standard:account">
+        <lightning-datatable
+            lwc:if={accountList.data}
+            key-field="id"
+            data={accountList.data}
+            show-row-number-column
+            hide-checkbox-column
+            columns={columnsList}
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

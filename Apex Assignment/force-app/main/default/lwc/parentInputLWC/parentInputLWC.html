@@ -1,0 +1,13 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Parent Component">
+        <div class="slds-m-horizontal_medium">
+            <div class="slds-form-element slds-form-element_stacked">
+                <lightning-input type="text" id="stacked-input-id-01" label="Parent Input Field" name="parentData" value={parentData} onchange={handleChange} ></lightning-input>
+            </div>
+            <!-- <p class="slds-m-bottom_medium">Data in Parent LWC: {parentData}</p> -->
+            <p class="slds-m-bottom_medium">Data from Child LWC: {childData}</p>
+            <div class="slds-m-bottom_medium"><lightning-button variant="brand" label="Call Child Method" title="InvokehildMethod" onclick={handleClick}></lightning-button></div>
+            <c-child-input-l-w-c onchilddata={handleChildData} parent-data={parentData}></c-child-input-l-w-c>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,41 @@
+<template>
+    <lightning-card>
+        <template if:true={contactData}>
+            <h1>Last Modified Contact Info</h1>
+            <div class="slds-m-around_medium">
+                <h2>First Name: {contactData.firstName}</h2>
+                <h2>Last Name: {contactData.lastName}</h2>
+                <h2>DOB: {contactData.dateOfBirth}</h2>
+                <h2>Email: {contactData.email}</h2>
+                <h2>Phone: {contactData.phone}</h2>
+                <h2>Account Name: {contactData.accountName}</h2>
+            </div>
+        </template>
+    </lightning-card>
+    <!-- <lightning-record-view-form
+        object-api-name="Contact"
+        record-id="003Qy000008ILHVIA4" >
+        <lightning-output-field field-name="FirstName"> </lightning-output-field>
+        <lightning-output-field field-name="LastName"> </lightning-output-field>
+        <lightning-output-field field-name="Email"> </lightning-output-field>
+    </lightning-record-view-form> -->
+    <lightning-card>
+        <lightning-record-form
+            record-id={recordId}
+            object-api-name={objectApiName}
+            layout-type="Full"
+            mode="readonly"
+        >
+        </lightning-record-form>
+    </lightning-card>
+    <lightning-card>
+        <template if:true={returnedContact.data}>
+            <div class="slds-m-around_medium">
+                <p>{returnedContact.data.fields.Name.value}</p>
+                <p>{returnedContact.data.fields.Title.value}</p>
+                <p>{returnedContact.data.fields.Phone.value}</p>
+                <p>{returnedContact.data.fields.Email.value}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

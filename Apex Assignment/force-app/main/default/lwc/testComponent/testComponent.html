@@ -1,0 +1,17 @@
+<template>
+    <h1>This is Test Component</h1>
+    <h2>Hii, {name}</h2>
+    <lightning-card title="Card Title">
+        <h1>Hii, {name}</h1>
+        <p slot="actions">
+            <button class="slds-button">Button</button>
+        </p>
+        <p>
+            <lightning-button onclick={handleClick} variant="brand" label="Button" title="Button" slot="actions"></lightning-button>
+        </p>
+        <p>
+            <lightning-button-icon icon-name="utility:down" slot="actions">
+            </lightning-button-icon>
+        </p>
+    </lightning-card>
+</template>

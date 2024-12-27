@@ -1,0 +1,49 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Toll Transaction Dashboard" icon-name="standard:account">
+        <div class="slds-m-horizontal_large">
+            <div class="slds-form" role="list">
+                <div class="slds-form__row">
+                  <div class="slds-form__item" role="listitem">
+                    <lightning-input type="date" variant="standard" name="StartDate" label="Start Date" placeholder="Start Date" onchange={handleChange}></lightning-input>
+                  </div>
+                  <div class="slds-form__item" role="listitem">
+                    <lightning-input type="date" variant="standard" name="EndDate" label="End Date" placeholder="End Date" onchange={handleChange}></lightning-input>
+                  </div>
+                </div>
+                <template lwc:if={vehicleTypesPicklistValues.data}>
+                    <div class="slds-form__row">
+                      <div class="slds-form__item" role="listitem">
+                        <lightning-combobox
+                            name="VehicleType"
+                            label="Vehicle Type"
+                            value={vehicleType}
+                            placeholder="Vehicle Type"
+                            options={vehicleTypesPicklistValues.data.values}
+                            onchange={handleChange} ></lightning-combobox>
+                      </div>
+                      <div class="slds-form__item" role="listitem">
+                        <lightning-input type="number" variant="standard" name="transactionAmount" label="Transaction Amount" placeholder="transactionAmount" onchange={handleChange}></lightning-input>
+                      </div>
+                    </div>
+                </template>
+                <div class="slds-form__row">
+                    <div class="slds-form__item" role="listitem">
+                      <lightning-button variant="brand" label="Apply Filter" title="ApplyFilter" onclick={handleClick}></lightning-button>
+                    </div>
+                    <div class="slds-form__item" role="listitem">
+                      <!-- <lightning-input type="number" variant="standard" name="transactionAmount" label="Transaction Amount" placeholder="transactionAmount" onchange={handleChange}></lightning-input> -->
+                    </div>
+                </div>
+            </div>
+            <lightning-datatable
+                key-field="id"
+                data={tollRecordList}
+                show-row-number-column
+                hide-checkbox-column
+                columns={columns}
+                onrowaction={handleRowAction}
+                >
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

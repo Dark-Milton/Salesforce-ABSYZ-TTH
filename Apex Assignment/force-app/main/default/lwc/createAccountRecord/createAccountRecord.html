@@ -1,0 +1,29 @@
+<template>
+    <lightning-card  variant="Narrow" title="Get Record Using lightning/uiRecordApi" icon-name="standard:account">
+        <div class="slds-m-horizontal_medium">
+            <form class="slds-form" onsubmit={handleSubmit}>
+                <div class="slds-form-element slds-form-element_stacked">
+                    <lightning-input type="text" id="stacked-input-id-01" label="Name" name="name" value={name} onchange={handleChange} ></lightning-input>
+                </div>
+                <template lwc:if={RatingPicklistValues.data}>
+                    <div class="slds-form-element slds-form-element_stacked">
+                        <lightning-combobox
+                            name="rating"
+                            label="Rating"
+                            value={ratingValue}
+                            options={RatingPicklistValues.data.values}
+                            onchange={handleChange} >
+                        </lightning-combobox>
+                    </div>
+                </template>
+                <lightning-button
+                        type="submit"
+                        name="submit"
+                        variant="brand"
+                        label="Create Account"
+                    >
+                </lightning-button>
+            </form>
+        </div>
+    </lightning-card>
+</template>

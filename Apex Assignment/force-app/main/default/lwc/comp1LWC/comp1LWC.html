@@ -1,0 +1,17 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Component 1" icon-name="standard:account">
+        <div class="slds-m-horizontal_medium">
+            <div class="slds-form-element slds-form-element_stacked">
+                <lightning-input type="text" id="stacked-input-id-01" label="Component 1 Input Field" name="comp1Data" value={comp1Data} onchange={handleChange} ></lightning-input>
+            </div>
+        </div>
+    </lightning-card>
+    <lightning-card  variant="Narrow"  title="Component 1 of Task 17" icon-name="standard:account">
+        <div class="slds-m-horizontal_medium">
+            <div class="slds-form-element slds-form-element_stacked">
+                <lightning-input type="text" id="stacked-input-id-02" label="Component 1 Input Field" name="comp1DataTask17" value={comp1DataTask17} onchange={handleChangeTask17} ></lightning-input>
+            </div>
+            <lightning-button label="Publish" variant="brand" class="slds-m-right_x-small" onclick={handleClick}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

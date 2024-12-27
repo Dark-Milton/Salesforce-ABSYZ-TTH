@@ -1,0 +1,39 @@
+<template>
+    <lightning-card>
+        <template if:true={modifiedOpportunities} for:each={modifiedOpportunities} for:item="opp" for:index="index">
+           <li key={opp.Id}>
+            <p>Name: {opp.Name}</p>
+            <p>Stage Name: {opp.StageName}</p>
+            <p>Type: {opp.Type}</p>
+           </li>
+        </template>
+        <template if:true={returnedOpportunitiesList.data} for:each={returnedOpportunitiesList.data} for:item="opp" for:index="index">
+           <li key={opp.Id}>
+            <p>Name: {opp.Name}</p>
+            <p>Stage Name: {opp.StageName}</p>
+            <p>Type: {opp.Type}</p>
+           </li>
+        </template>
+        <template if:true={returnedOpportunitiesList.data}>
+            <lightning-datatable
+                key-field="Id"
+                data={returnedOpportunitiesList.data}
+                columns={columns}
+            >
+           </lightning-datatable>
+        </template>
+        <template if:true={returnedContacts} for:each={returnedContacts} for:item="con" for:index="index">
+            <li key={con.Id}>
+             <p>Name: {con.Name}</p>
+             <p>Email: {con.Email}</p>
+            </li>
+         </template>
+        <template if:true={returnedLeads} for:each={returnedLeads} for:item="lead" for:index="index">
+            <li key={lead.Id}>
+             <p>Name: {lead.Name}</p>
+             <p>Email: {lead.Email}</p>
+            </li>
+         </template>
+         <lightning-button variant="base" label="contactLeads" title="Call Contacts and Leads" onclick={callContactsAndLaeds}></lightning-button>
+    </lightning-card>
+</template>

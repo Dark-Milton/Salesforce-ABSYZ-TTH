@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Create Contact Record">
+        <div class="slds-form slds-m-horizontal_large" role="list">
+          <lightning-record-edit-form object-api-name="Contact" onsubmit={handleSubmit} onsuccess={handleSuccess}>
+            <div class="slds-form__row">
+              <div class="slds-form__item" role="listitem">
+                    <lightning-input-field type="text" id="single-form-element-last-name" placeholder="Enter Last Name" value={lastName} required field-name="LastName"></lightning-input-field>
+              </div>
+              <div class="slds-form__item" role="listitem">
+                    <lightning-input-field type="email" id="single-form-element-email" placeholder="Enter Email" value={email} required field-name="Email"> </lightning-input-field>
+              </div>
+            </div>
+            <div class="slds-form__row">
+              <div class="slds-form__item" role="listitem">
+                <lightning-combobox id="single-form-element-account-name"
+                  name="accountName"
+                  label="Account"
+                  value={accountId}
+                  placeholder="Select Account"
+                  options={accountOptions}
+                  field-name="AccountId"
+                  variant="label-inline"
+                  onchange={handleChange} ></lightning-combobox>
+              </div>
+              <div class="slds-form__item" role="listitem">
+                    <lightning-input-field type="tel" id="single-form-element-phone" placeholder="Enter Phone" value={phone} required field-name="Phone"> </lightning-input-field>
+              </div>
+            </div>
+            <div class="slds-form__row">
+              <div class="slds-form__item" role="listitem">
+                    <lightning-input-field type="text" id="single-form-element-title" placeholder="Enter Title" value={title} required field-name="Title"> </lightning-input-field>
+              </div>
+              <div class="slds-form__item" role="listitem">
+              </div>
+            </div>
+            <div class="slds-align_absolute-center slds-m-top_large">
+              <lightning-button
+                  type="submit"
+                  name="submit"
+                  variant="brand-outline"
+                  label="Create Contact"
+                  disabled={isCreated}
+              >
+              </lightning-button>
+            </div>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

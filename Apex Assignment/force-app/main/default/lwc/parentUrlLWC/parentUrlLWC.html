@@ -1,0 +1,10 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+        <div class="slds-m-horizontal_medium">
+            <p>This is Parent Component and Display URL Link below:</p>
+            <p>{url}</p>
+            <a href={url} target="_blank">{url}</a>
+            <c-child-url-l-w-c onurlbuttonclick={handleURLButtonClick}></c-child-url-l-w-c>
+        </div>
+    </lightning-card>
+</template>

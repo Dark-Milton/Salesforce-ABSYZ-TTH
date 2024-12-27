@@ -1,0 +1,94 @@
+<template>
+    <!-- <lightning-layout>
+        <lightning-layout-item flexibility="auto" padding="around-small">
+            <lightning-input class="slds-p-around_small lgc-bg" value={firstName} type="text" label="First Name" readonly></lightning-input>
+            <lightning-input class="slds-p-around_small lgc-bg" value={lastName} type="text" label="Last Name" readonly></lightning-input>
+            <lightning-input class="slds-p-around_small lgc-bg" value={dateOfBirth} type="date" name="input1" label="Date Of Birth" readonly></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto" padding="around-small">
+            <lightning-input class="slds-p-around_small lgc-bg" value={email} type="email" label="Email" readonly></lightning-input>
+            <lightning-input class="slds-p-around_small lgc-bg" value={phone} type="tel" label="Phone" name="phone" readonly></lightning-input>
+            <lightning-input class="slds-p-around_small lgc-bg" value={accountName} type="text" label="Account" readonly></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout> -->
+    <div class="slds-form slds-m-horizontal_small" role="list">
+        <div class="slds-form__row">
+            <div class="slds-form__item" role="listitem">
+            <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                <span class="slds-form-element__label">First Name</span>
+                <div class="slds-form-element__control">
+                <div class="slds-form-element__static">{firstName}</div>
+                <button class="slds-button slds-button_icon" title="Edit: First Name" onclick={onEdit}>
+                    <lightning-icon icon-name="utility:edit" alternative-text="Edit" title="Edit" class="slds-button__icon slds-button__icon_hint" size="xx-small" ></lightning-icon>
+                    <span class="slds-assistive-text">Edit: First Name</span>
+                  </button>
+                </div>
+            </div>
+            </div>
+            <div class="slds-form__item" role="listitem">
+            <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                <span class="slds-form-element__label">Email</span>
+                <div class="slds-form-element__control">
+                <div class="slds-form-element__static">{email}</div>
+                <button class="slds-button slds-button_icon" onclick={onEdit} title="Edit: Email">
+                    <lightning-icon icon-name="utility:edit" alternative-text="Edit" title="Edit" class="slds-button__icon slds-button__icon_hint" size="xx-small" ></lightning-icon>
+                    <span class="slds-assistive-text">Edit: Email</span>
+                </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="slds-form__row">
+            <div class="slds-form__item" role="listitem">
+            <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                <span class="slds-form-element__label">Last Name</span>
+                <div class="slds-form-element__control">
+                <div class="slds-form-element__static">{lastName}</div>
+                <button class="slds-button slds-button_icon" onclick={onEdit} title="Edit: Last Name">
+                    <lightning-icon icon-name="utility:edit" alternative-text="Edit" title="Edit" class="slds-button__icon slds-button__icon_hint" size="xx-small" ></lightning-icon>
+                    <span class="slds-assistive-text">Edit: Last Name</span>
+                </button>
+                </div>
+            </div>
+            </div>
+            <div class="slds-form__item" role="listitem">
+            <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                <span class="slds-form-element__label">Phone</span>
+                <div class="slds-form-element__control">
+                <div class="slds-form-element__static">{phone}</div>
+                <button class="slds-button slds-button_icon" onclick={onEdit} title="Edit: Phone">
+                    <lightning-icon icon-name="utility:edit" alternative-text="Edit" title="Edit" class="slds-button__icon slds-button__icon_hint" size="xx-small" ></lightning-icon>
+                    <span class="slds-assistive-text">Edit: Phone</span>
+                </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="slds-form__row">
+            <div class="slds-form__item" role="listitem">
+            <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                <span class="slds-form-element__label">Date Of Birth</span>
+                <div class="slds-form-element__control">
+                <div class="slds-form-element__static">{dateOfBirth}</div>
+                <button class="slds-button slds-button_icon" onclick={onEdit} title="Edit: Date Of Birth">
+                    <lightning-icon icon-name="utility:edit" alternative-text="Edit" title="Edit" class="slds-button__icon slds-button__icon_hint" size="xx-small" ></lightning-icon>
+                    <span class="slds-assistive-text">Edit: Date Of Birth</span>
+                </button>
+                </div>
+            </div>
+            </div>
+            <div class="slds-form__item" role="listitem">
+            <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                <span class="slds-form-element__label">Account Name</span>
+                <div class="slds-form-element__control">
+                <div class="slds-form-element__static">{accountName}</div>
+                <button class="slds-button slds-button_icon" onclick={onEdit} title="Edit: Account Name">
+                    <lightning-icon icon-name="utility:edit" alternative-text="Edit" title="Edit" class="slds-button__icon slds-button__icon_hint" size="xx-small" ></lightning-icon>
+                    <span class="slds-assistive-text">Edit: Account Name</span>
+                </button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</template>

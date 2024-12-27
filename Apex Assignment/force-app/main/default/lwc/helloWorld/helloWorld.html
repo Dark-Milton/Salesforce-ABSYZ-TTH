@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Hello World Component">
+        <div class="slds-m-horizontal_x-large">
+            <div>
+            <input class="slds-m-right_x-small" type="checkbox" name="options" id="checkbox-unique-id-81" value="checkbox-unique-id-81" onchange={toggleChange} />
+            <label class="slds-checkbox__label" for="checkbox-unique-id-81">
+                <span class="slds-form-element__label">Show Name?</span>
+                </label>
+            </div>
+            <template lwc:if={isShowing}>
+                <b>Hello World ! My Name is {name}</b>
+            </template>
+        </div>
+    </lightning-card>
+</template>

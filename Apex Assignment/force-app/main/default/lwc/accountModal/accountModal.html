@@ -1,0 +1,15 @@
+<template>
+    <lightning-modal-header label="Account Details"></lightning-modal-header>
+    <lightning-modal-body>
+        <template lwc:if={accountData.data}>
+            <p>Account Name: {accountData.data.fields.Name.value}</p>
+            <p>Account Industry: {accountData.data.fields.Industry.value}</p>
+        </template>
+        <lightning-record-form
+            object-api-name="Account"
+            record-id={accRecordId}
+            layout-type="Compact"
+        >
+        </lightning-record-form>
+    </lightning-modal-body>
+</template>

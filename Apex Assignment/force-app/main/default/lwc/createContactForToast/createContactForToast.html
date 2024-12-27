@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Contact Record Creation For Toast">
+        <lightning-record-form
+            object-api-name="Contact"   
+            fields={fields}
+            onsubmit={handleSubmit}
+            onsuccess={handleSuccess}
+            onerror={handleError}
+        >
+        </lightning-record-form>
+    </lightning-card>
+</template>

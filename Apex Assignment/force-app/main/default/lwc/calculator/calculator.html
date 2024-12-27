@@ -1,0 +1,31 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Calculator" icon-name="standard:account">
+        <div class="slds-grid slds-gutters slds-m-bottom_medium">
+            <div class="slds-col">
+                    <lightning-input name="num1" class="slds-p-around_small lgc-bg" type="number" label="Number 1" value={objInstance.num1} onchange={handleChange}></lightning-input>
+            </div>
+            <div class="slds-col">
+                    <lightning-input name="num2" class="slds-p-around_small lgc-bg" type="number" label="Number 2" value={objInstance.num2} onchange={handleChange}></lightning-input>
+            </div>
+        </div>
+        <div class="slds-align_absolute-center">
+            <lightning-button symbol="+" label="Add" variant="brand" icon-name="utility:add" class="slds-m-right_x-small" onclick={handleOperate}></lightning-button>
+            <lightning-button symbol="-" label="Subtract" variant="brand" icon-name="utility:subtract" class="slds-m-right_x-small" onclick={handleOperate}></lightning-button>
+            <lightning-button symbol="*" label="Multiply" variant="brand" icon-name="utility:multiply" class="slds-m-right_x-small" onclick={handleOperate}></lightning-button>
+            <lightning-button symbol="/" label="Divide" variant="brand" icon-name="utility:divide" class="slds-m-right_x-small" onclick={handleOperate}></lightning-button>
+        </div>
+        <div>
+            <h1>Results: </h1>
+            <template if:true={results} for:each={results} for:item="res" for:index="index">
+               <li key={res}>
+                    Result of {res.num1} {res.op} {res.num2} is {res.res}
+               </li>
+            </template>
+        </div>
+    </lightning-card>
+    <lightning-card>
+        <div class="slds-m-bottom_medium slds-m-left_medium">
+            <lightning-input name="checkbox-comp" class="slds-p-around_small lgc-bg" type="checkbox" label={checkBoxLabel} checked={isChecked} onchange={handleChecked}></lightning-input>
+        </div>
+    </lightning-card>
+</template>

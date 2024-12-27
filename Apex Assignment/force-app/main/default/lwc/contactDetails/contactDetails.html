@@ -1,0 +1,13 @@
+<template>
+    <lightning-card lwc:if={contactDetails}>
+        <template for:each={contactDetailsKeys} for:item="key">
+            {key}
+            <div class="slds-form-element" key={key}>
+                <label class="slds-form-element__label" for="form-element-01">{key}</label>
+                <div class="slds-form-element__control">
+                    <input type="text" id="form-element-01" value="$contactDetails[key]" />
+                </div>
+            </div>
+        </template>
+        </lightning-card>
+</template>

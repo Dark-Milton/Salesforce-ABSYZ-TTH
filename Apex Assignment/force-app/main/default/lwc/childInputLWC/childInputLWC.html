@@ -1,0 +1,8 @@
+<template>
+    <b class="slds-text-heading_small">Child LWC</b>
+    <div class="slds-form-element slds-form-element_stacked">
+        <lightning-input type="text" id="stacked-input-id-01" label="Child Input Field" name="childData" value={childData} onchange={handleChange} ></lightning-input>
+    </div>
+    <p class="slds-m-bottom_medium">Data from Parent LWC: {parentData}</p>
+    <!-- <p>Data in Child LWC: {childData}</p> -->
+</template>

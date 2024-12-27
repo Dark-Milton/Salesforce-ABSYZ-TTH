@@ -1,0 +1,27 @@
+<template>
+    <lightning-card  title="Edit Contact Form">
+        <template lwc:if={isSaved}>
+            <lightning-button label="Edit" slot="actions" onclick={onEdit}></lightning-button>
+            <c-contact-edit-form-child lwc:ref="editFormChild" onfieldedit={onEdit} first-name={firstName} last-name={lastName} date-of-birth={dateOfBirth} email={email} phone={phone} account-name={accountName}></c-contact-edit-form-child>
+        </template>
+        <template lwc:else>
+            <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                <div class="slds-col">
+                        <lightning-input lwc:ref="firstName" class="slds-p-around_small lgc-bg" type="text" label="First Name" value={firstName}></lightning-input>
+                        <lightning-input lwc:ref="lastName" class="slds-p-around_small lgc-bg" type="text" label="Last Name" value={lastName}></lightning-input>
+                        <lightning-input lwc:ref="dateOfBirth" class="slds-p-around_small lgc-bg" type="date" name="input1" label="Date Of Birth" value={dateOfBirth}></lightning-input>
+                </div>
+                <div class="slds-col">
+                        <lightning-input lwc:ref="email" class="slds-p-around_small lgc-bg" type="email" label="Email" value={email}></lightning-input>
+                        <lightning-input lwc:ref="phone" class="slds-p-around_small lgc-bg" type="tel" label="Phone" name="phone" value={phone}></lightning-input>
+                        <lightning-input lwc:ref="accountName" class="slds-p-around_small lgc-bg" type="text" label="Account" value={accountName}></lightning-input>
+                </div>
+            </div>
+            <div class="slds-align_absolute-center">
+                <lightning-button label="Save" variant="brand" icon-name="utility:save" class="slds-m-right_x-small" onclick={onSave}></lightning-button>
+                <lightning-button label="Cancel" onclick={onCancel}></lightning-button>
+            </div>
+        </template>
+        <lightning-button label="Call Child" onclick={callChildMethod}></lightning-button>
+    </lightning-card>
+</template>

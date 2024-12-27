@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+        <div class="slds-m-horizontal_medium">
+            <lightning-record-form
+                object-api-name="Account"
+                fields={fields}
+                onsubmit={handleSubmit}
+                onsuccess={handleSuccess}
+                onerror={handleError}
+            >
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

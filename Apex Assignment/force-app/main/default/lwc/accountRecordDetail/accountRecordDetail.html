@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  variant="Narrow" title="Get Record Using lightning/uiRecordApi" icon-name="standard:account">
+        <div class="slds-m-horizontal_medium">
+            <template lwc:if={accountRecord.data}>
+                <p>Account Name: {accountRecord.data.fields.Name.value}</p>
+                <p>Account Industry: {accountRecord.data.fields.Industry.value}</p>
+                <p>Account Rating: {accountRecord.data.fields.Rating.value}</p>
+            </template>
+            <template lwc:if={accountRecord.error}>
+                Cannot display Account details
+            </template>
+        </div>
+    </lightning-card>
+</template>

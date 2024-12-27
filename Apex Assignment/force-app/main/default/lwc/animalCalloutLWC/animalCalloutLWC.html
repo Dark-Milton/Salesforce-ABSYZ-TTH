@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Animal Callout">
+        <template lwc:if={animalData} for:each={animalData} for:item="animal" for:index="index">
+           <li key={canimal}>
+                <p>{animal}</p>
+           </li>
+        </template>
+        <template lwc:else>
+            <lightning-button variant="brand" label="Get Animals" title="Get Animals" onclick={handleClick}></lightning-button>
+        </template>
+    </lightning-card>
+</template>

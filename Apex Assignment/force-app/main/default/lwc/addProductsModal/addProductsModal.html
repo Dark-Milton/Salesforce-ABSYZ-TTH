@@ -1,0 +1,58 @@
+<template>
+    <div class="slds-m-horizontal_medium slds-m-vertical_medium">
+        <lightning-card  variant="Narrow">
+            <div class="slds-grid slds-m-horizontal_x-small slds-m-bottom_medium">
+                <div class="slds-col slds-size_1-of-4">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="standard:product" alternative-text="Account" title="Account"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title">
+                                <span>Add Products</span>
+                            </h2>
+                        </div>
+                    </header>
+                </div>
+                <div class="slds-col slds-size_2-of-4">
+                    <lightning-input variant="label-hidden" class="slds-col slds-align_absolute-center slds-form_horizontal" type="text" placeholder="Search Accounts..." value={searchKey} onchange={handleSearch}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <lightning-button class="slds-col slds-align_absolute-center slds-form_horizontal slds-float_right" variant="brand" label="Save" title="Save" onclick={handleSave}></lightning-button>
+                </div>
+              </div>
+            <lightning-tabset variant="scoped">
+                <lightning-tab label="All Products">
+                    <lightning-datatable
+                        lwc:if={filteredProducts}
+                        key-field="Id"
+                        data={filteredProducts}
+                        columns={columnsList}
+                        onrowselection={handleRowSelection}
+                        selected-rows={selectedDataIds}
+                        sorted-direction={sortDirection}
+                        sorted-by={sortedBy}
+                        onsort={onHandleSort}>
+                    </lightning-datatable>
+                </lightning-tab>
+                <lightning-tab label="Selected">
+                    <lightning-datatable
+                        key-field="Id"
+                        data={selectedProducts}
+                        hide-checkbox-column
+                        columns={columnsList}>
+                    </lightning-datatable>
+                </lightning-tab>
+                <lightning-tab label="Existing">
+                    <lightning-datatable
+                        lwc:if={existingProducts.data}
+                        key-field="Id"
+                        data={existingProducts.data}
+                        hide-checkbox-column
+                        columns={columnsList}>
+                    </lightning-datatable>
+                </lightning-tab>
+            </lightning-tabset>
+        </lightning-card>
+    </div>
+</template>
